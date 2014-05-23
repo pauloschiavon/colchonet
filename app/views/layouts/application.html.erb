@@ -17,7 +17,7 @@
 
 	<header>
 		<div id="header-wrap">
-			<h1><%= link_to "colcho.net", root_path %> </h1>
+			<h1><%= link_to "colcho.net", root_path %></h1>
 			<nav>
 				<ul>
 					<li><%= link_to t('layout.rooms'), rooms_path %> </li>
@@ -38,6 +38,10 @@
 		
 		<%= yield %> 
 	</div>
-
+	<br /><br /><br />
+	<div id="content">
+		<%= link_to_unless I18n.locale == :en, "en", locale: :en %> |
+		<%= link_to_unless I18n.locale == :de, "pt", locale: :pt %>
+	</div>
 </body>
 </html>

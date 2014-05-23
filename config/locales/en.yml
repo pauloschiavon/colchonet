@@ -20,4 +20,31 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  rooms: 
+    new: 
+      title: New account
+    edit: 
+      title: Edit room
+    show: 
+      title: "Room: %{room_title}"
+      edit: Edit Room
+      location: "Location: %{location}"
+      description: "Description: %{description}"
+  users: 
+    new: 
+      title: Account
+    edit: 
+      title: Edit account
+    show: 
+      title: "Account: %{user_name}"
+      edit: Edit account
+      location: "Location: %{location}"
+      bio: "Bio: %{bio}"
+  links: 
+    back: Back
+  layout: 
+    rooms: Rooms
+    signup: New Account
+  general:
+    form_error: "There are errors on the form, please check"
+ 

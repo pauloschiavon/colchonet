@@ -8,7 +8,7 @@ pt:
       title: "Quarto: %{room_title}"
       edit: Ediar quarto
       location: "Localização: %{location}"
-      description: "Description: %{description}"
+      description: "Descrição: %{description}"
   users: 
     new: 
       title: Cadastro
@@ -25,7 +25,7 @@ pt:
     rooms: Quartos
     signup: Cadastro
   general:
-    form_error: "Há erros no formilário, favor verificar"
+    form_error: "Há erros no formulário, favor verificar"
   activerecord: 
     models: 
       room: Quarto
