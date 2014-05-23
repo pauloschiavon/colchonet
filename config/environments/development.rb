@@ -31,7 +31,24 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+  
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  # indica o host para o ambiente de desenvolvimento
+  # impostante para o envio de e-mails
+  config.action_mailer.default_url_options = {
+    host: "localhost:3000"
+  }
+  
+  # Aponta o host para o ambiente de desenvolvimento
+  config.action_mailer.default_url_options = {
+    host: "localhost:3000"
+  }
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "localhost",
+    port: 1025
+  }
 end
