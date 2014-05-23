@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
                         confirmation: true
   
   validates :email,     presence: true, 
-                        format: { with: /\A[^@]+@[^@\.]+\z/ }, 
+                        format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, 
                         uniqueness: true                   
                         
   validates_length_of :bio, minimum: 30, 
