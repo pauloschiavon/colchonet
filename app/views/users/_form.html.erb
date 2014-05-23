@@ -1,41 +1,66 @@
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %> 
 		<div id="error_explanation">
-	    <h2>Infelizmente não foi possível completara ação pois o 					 formulário possui os seguintes erros:</h2>
-	    <ul>
-				<% @user.errors.full_messages.each do |message|%> 
-					<li><%= message %> </li>
-				<% end %> 
-			</ul>
+	    <h2>Ocorreu um erro ao inserir o usuário!</h2>
 		</div> 
 	<% end %>
 			
 	<p>
-		<%= f.label :full_name %> <br />
+		<%= f.label :full_name %>
 		<%= f.text_field :full_name %> 
+		<% if @user.errors.has_key? :full_name %>
+			<div class="error_message">
+				<%= @user.errors[:full_name].first %>
+			</div>
+		<% end %>
 	</p>
 	
 	<p>
-		<%= f.label :location %> <br />
-		<%= f.text_field :location %>
+		<%= f.label :location %>
+		<%= f.text_field :location %> 
+		<% if @user.errors.has_key? :location %>
+			<div class="error_message">
+				<%= @user.errors[:location].first %>
+			</div>
+		<% end %>
 	</p> 
 	<p>
-		<%= f.label :email %> <br />
+		<%= f.label :email %>
 		<%= f.text_field :email %> 
+		<% if @user.errors.has_key? :email %>
+			<div class="error_message">
+				<%= @user.errors[:email].first %>
+			</div>
+		<% end %>
 	</p>
 	<p>
-		<%= f.label :password %> <br />
+		<%= f.label :password %>
 		<%= f.password_field :password %>
+		<% if @user.errors.has_key? :password %>
+			<div class="error_message">
+				<%= @user.errors[:password].first %>
+			</div>
+		<% end %>
 	</p>
 	<p>
-		<%= f.label :password_confirmation %> <br />
+		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
+		<% if @user.errors.has_key? :password_confirmation %>
+			<div class="error_message">
+				<%= @user.errors[:password_confirmation].first %>
+			</div>
+		<% end %>
 	</p> 
 	<p>
-		<%= f.label :bio %> <br />
+		<%= f.label :bio %>
 		<%= f.text_area :bio %> 
+		<% if @user.errors.has_key? :bio %>
+			<div class="error_message">
+				<%= @user.errors[:bio].first %>
+			</div>
+		<% end %>
 	</p>
 	<p>
-	<%= f.submit %>
-</p>
+		<%= f.submit %>
+	</p>
 <% end %>
