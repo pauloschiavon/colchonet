@@ -4,11 +4,10 @@ class RoomsController < ApplicationController
   before_action :require_authentication, only: [:new, :edit, :create, :update, :destroy]
   
   def index
-    # O método #map, de coleções, retornará um novo Array
-    # contendo o resultado do bloco. Dessa forma, para cada
-    # quarto, retornaremos o presenter equivalente.
-    @rooms = Room.most_recent.map do |room|
-      # Não exibiremos o formulário na listagem
+    @search_query = params[:q]
+    
+    rooms = Room.search(@search_query).most_recent
+    @rooms = rooms.map do |room|
       RoomPresenter.new(room, self, false)
     end
   end
