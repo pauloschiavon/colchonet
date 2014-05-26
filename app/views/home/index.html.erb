@@ -1,7 +1,5 @@
 <h1>Quartos recém postados</h1>
 
-<ul>
-	<% @rooms.each do |room| %> 
-		<li><%= link_to "#{room.title}, #{room.location}", room %> </li>
-	<% end %> 
-</ul>
+<% @rooms.each do |room| %> 
+	<%= render room %>
+<% end %> 

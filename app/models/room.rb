@@ -1,6 +1,8 @@
 class Room < ActiveRecord::Base
   belongs_to :user
   
+  scope :most_recent, -> { order('created_at DESC') }
+  
   validates :title, :location, :description, presence: true
   
   validates_length_of :description, minimum: 30, 
