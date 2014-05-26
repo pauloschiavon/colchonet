@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  
   scope :confirmed, -> { where.not(confirmed_at: nil) }
+  
+  has_many :rooms
   
   validates :full_name, :location, presence: true
   

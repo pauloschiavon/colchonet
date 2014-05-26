@@ -1,4 +1,5 @@
 class Room < ActiveRecord::Base
+  belongs_to :user
   
   validates :title, :location, :description, presence: true
   
