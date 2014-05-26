@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   scope :confirmed, -> { where.not(confirmed_at: nil) }
   
-  has_many :rooms
+  has_many :rooms, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   
   validates :full_name, :location, presence: true
   
