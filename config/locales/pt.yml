@@ -1,7 +1,11 @@
 pt:
   flash: 
+    alert:  
+      needs_login: "Você precisa estar logado para continuar" 
     notice:  
       signed_in: "Seja bem vindo!!!"
+      signed_out: Logout efetuado com sucesso. até logo!
+      already_logged_in: "Voce já está logado"
   confirmations: 
     success: "Email confirmado com sucesso, obrigado!"
   rooms: 
@@ -44,6 +48,10 @@ pt:
   layout: 
     rooms: Quartos
     signup: Cadastro
+    signin: Login
+    new_room: Cadastre seu quarto!
+    my_profile: Meu Perfil
+    signout: Logout
   general:
     form_error: "Há erros no formulário, favor verificar"
   activerecord: 
