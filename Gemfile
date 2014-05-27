@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem "font-awesome-rails"
 
 gem 'friendly_id', '5.0.3'
+
+gem 'kaminari'
 # Use unicorn as the app server
 # gem 'unicorn'
 
