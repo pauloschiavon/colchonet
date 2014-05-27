@@ -48,15 +48,20 @@ class RoomsController < ApplicationController
     @room.destroy
     redirect_to rooms_url, notice: 'Room was successfully destroyed.'
   end
+  
+  # urls slugs - simple example
+  #def to_param
+  #  "#{id}-#{title.parameterize}"
+  #end
 
   private
     def set_room
-      room_model = Room.find(params[:id])
+      room_model = Room.friendly.find(params[:id])
       @room = RoomPresenter.new(room_model, self)
     end
     
     def set_users_room
-      @room = current_user.rooms.find(params[:id])
+      @room = current_user.rooms.friendly.find(params[:id])
     end
 
     def room_params
